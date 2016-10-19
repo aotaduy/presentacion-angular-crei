@@ -1,0 +1,830 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Angular.js CREI</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/white.css">
+        <link rel="stylesheet" href="css/presentation.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>                    <img src="img/angular-logo.png" alt="Angular logo" />
+</h1>
+                    <h2><a href="http://www.frro.utn.edu.ar"> CREI Utn Rosario</a></h2>
+
+                    <a href="https://github.com/aotaduy">https://github.com/aotaduy</a>
+                    <p>
+                      <img src="img/profile.png" alt="profile"/>
+                    </p>
+                    <p>
+                      <a href="https://github.com/aotaduy">Ing. Andres Otaduy</a>
+                    </p>
+                    <p>
+                      http://aotaduy.github.io/presentacion-angular-crei/
+                    </p>
+                </section>
+                <section>
+                  <section>
+                      <h2>HTML + HTTP Paginas Estaticas</h2>
+                      <a href="http://info.cern.ch/hypertext/WWW/TheProject.html">Primer pagina web</a>
+                      <a href="http://line-mode.cern.ch/www/hypertext/WWW/TheProject.html">Emulador</a><br>
+                      <img src="img/theproject.png" alt="" height="400px" />
+                  </section>
+                  <section>
+                    <h1>Evolucion FrontEnd</h1>
+                      <h2>HTML + Imagenes + Tablas</h2>
+                      <img src="img/mosaic.png" alt=""  height="400px"/>
+                  </section>
+                  <section>
+                    <h2>Hypermedia: HTML + Imagenes + Tablas</h2>
+
+                    <img src="img/geocities1.png" alt=""  height="350px" />
+                    <img src="img/geocities2.png" alt=""  height="350px" />
+
+                </section>
+                <section>
+                  <h2>Web Applications</h2>
+                  <p>
+                    Perl, ASP, PHP, Apache, MySQL
+                  </p>
+                  <img src="img/yahoo.jpg" alt=""  height="350px" />
+                  <img src="img/hotmail.jpg" alt=""  height="350px" />
+                  <p>
+
+                    <a href="http://www.evolutionoftheweb.com/#/evolution/day">Evolucion</a>
+                  </p>
+              </section>
+              <section>
+                <h2>Single Page Applications</h2>
+                <p>
+                  NodeJs, Java, C#, MongoDB, Javascript, REST API
+                </p>
+                <img src="img/gmail.png" alt=""  height="300px" />
+                <img src="img/facebook.png" alt=""  height="250px" />
+            </section>
+            <section>
+              <h1>SPA: Single Page Applications</h1>
+              <ul>
+                <li>Servicios REST</li>
+                <li>Frameworks Front End Angualr, ember, knockout, React</li>
+                <li>Separacion de Intereses</li>
+                <li>Division de Backend / Frontend</li>
+                <li>Mobile o Mobile First</li>
+                <li><a href="https://www.madewithangular.com/">Examples</a></li>
+              </ul>
+            </section>
+            </section>
+            <section>
+              <section>
+                <h1>Javascript</h1>
+                <ul>
+                  <li>                  Libro: Javascript the good parts</li>
+                  <li>                  Conferencia en google <a href="https://www.youtube.com/watch?v=lP9-Zx_cCUg">Javascript the good parts subtitulada</a>
+</li>
+<li>                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN</a>
+</li>
+<li>                <a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN en castellano</a>
+</li>
+                </ul>
+
+
+
+
+              </section>
+              <section>
+                Javascript
+                <ul>
+                  <li>Uno de los lenguajes mas usados e incomprendidos del mundo</li>
+                  <li>Obligatorio para programar en el browser</li>
+                  <li>Interfaz Con el DOM</li>
+                  <li>Sintaxis de C, Semantica de Scheme</li>
+                </ul>
+              </section>
+              <section>
+                <h1>Javascript influencias</h1>
+                <ul>
+                  <li>Scheme</li>
+                  <li>Java</li>
+                  <li>Self</li>
+                  <li>Perl</li>
+                </ul>
+              </section>
+              <section>
+                <h1>Javascript Good Parts</h1>
+                <ul>
+                  <li>Loose Typing</li>
+                  <li>Objetos Dinamicos</li>
+                  <li>Funciones Lambda</li>
+                  <li>Objetos Literales</li>
+                  <li>Herencia prototipica</li>
+                  <li>Es facil!</li>
+                </ul>
+              </section>
+              <section>
+                <h1>Funciones Lambda</h1>
+                <pre><code class="js">var cuad, cubo, array = [1,2,3,4];
+cuad = function(a){
+  return a * a;
+};
+cubo = function(a) {
+  return cuad(a) * a;
+};
+
+array.map(cuad) + array.map(cubo);
+console.log(array.reduce(0, suma));
+
+function suma(a,b) {
+  return a + b;
+}
+</code></pre>
+              </section>
+              <section>
+                <h1>Objetos dinamicos</h1>
+                <pre><code class="js">var object = {name: 'Jon'};
+object.lastName = 'Smith';
+object.print = function(){
+  console.log('Name:', this.name);
+  console.log('LastName:', this.lastName)};
+object.print();</code></pre>
+              </section>
+              <section>
+                <h1>Objetos Literales</h1>
+                <pre><code class="js">{
+  "glossary":{
+    "title":"example glossary",
+    "GlossDiv":{
+      "title":"S",
+      "GlossList":{
+        "GlossEntry":{
+          "ID":"SGML",
+          "SortAs":"SGML",
+          "GlossTerm":"Standard Generalized Markup Language",
+          "Acronym":"SGML",
+          "Abbrev":"ISO 8879:1986",
+          "GlossDef":{
+            "para":"A meta-markup language, used to create markup languages such as DocBook.",
+            "GlossSeeAlso":[
+              "GML",
+              "XML"
+            ]
+          },
+          "GlossSee":"markup"
+        }
+      }
+    }
+  }
+}</code></pre>
+              </section>
+              <section>
+                <h1>Javascript Bad Parts</h1>
+                <ul>
+                  <li>Variables Globales</li>
+                  <li>Interfaz con el DOM</li>
+                  <li>Insercion de punto y coma</li>
+                  <li>comparaciones == !=</li>
+                  <li>Es facil!</li>
+                </ul>
+              </section>
+              <section>
+                <h1>Correr JS</h1>
+                <ul>
+                  <li>Embebido</li>
+                  <li>Scripts</li>
+                  <li>NodeJs</li>
+                </ul>
+              </section>
+
+            </section>
+            <section>
+            <section>
+              <h1>Angular.js</h1>
+              <ul>
+                <li>Framework front end Opinionated</li>
+                <li>Templates Declarativos</li>
+                <li>Extiende HTML</li>
+                <li>Componentes</li>
+                <li>Testeabilidad</li>
+                <li>Alto Nivel</li>
+                <li>Aplicaciones ABM</li>
+                <li>MVC - MVVM</li>
+                <li>Facil de instalar</li>
+                <li>Algunas Desventajas</li>
+              </ul>
+              <img src="img/angular-diagram.jpeg" alt="" />
+            </section>
+            <section>
+              <h1>Templates Declarativos</h1>
+              <h2>Extiende HTML</h2>
+              <pre><code class="js">&lt;div class=&quot;row&quot;&gt;
+    &lt;h2&gt;Search movies&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+        &lt;search-box autocomplete=&quot;searchVm.topMovieNames&quot; search-callback=&quot;searchVm.updatedSearch&quot;&gt;&lt;/search-box&gt;
+        &lt;movie-listing  movies=&quot;searchVm.movies&quot;&gt;&lt;/movie-listing&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;/div&gt;
+&lt;home-footer&gt;&lt;/home-footer&gt;</code></pre>
+            </section>
+            <section>
+              <h1>Componentes</h1>
+              <img src="img/components.png" alt="" />
+            </section>
+            <section>
+              <h1>Testeabilidad</h1>
+              <p>
+                <img src="img/protractor-logo.png" height="100px" alt="" />
+                <br>
+                <img src="img/mocja.svg" height="200px" alt="" />
+                <img src="img/chai-logo.png" height="200px" alt="" />
+              </p>
+              <ul>
+                <li>unit test - mocha jasmine</li>
+                <li><a href="http://www.protractortest.org/#/">Protractor</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>Angular.js</h1>
+              <ul>
+                <li>Alto Nivel</li>
+                <li>Aplicaciones ABM</li>
+                <li>MVC - MVVM</li>
+                <li>Facil de instalar</li>
+                <li>Algunas Desventajas</li>
+              </ul>
+            </section>
+            <section>
+              <h1>Como Empezar</h1>
+              <p>
+                Cargar el script de angular, usar la directiva ng-app
+              </p>
+              <pre><code class="html">&lt;!doctype html&gt;
+                &lt;html ng-app&gt;
+                &lt;head&gt;
+                &lt;title&gt;My Angular App&lt;/title&gt;
+                &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js&quot;&gt;&lt;/script&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                &lt;!-- Add your template here --&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;</code></pre>
+
+
+              </section>
+            <section>
+              <h1>Estructura</h1>
+              <img src="img/angular-structure.png" alt="" />
+            </section>
+            <section>
+              <h1>Views - Templates - Directivas</h1>
+              <ul>
+                <li>Two way binding {{}}</li>
+                <li>Directivas del Framework<ul>
+                  <li>ng-app</li>
+                  <li>ng-init</li>
+                  <li>ng-model</li>
+                  <li>ng-if, ng-show</li>
+                  <li>ng-repeat</li>
+                  <li>ng-class</li>
+                </ul></li>
+              </ul>
+              <iframe src="./examples/words.html" width="300px" height="300px" style="margin-left: 30px; border: 1px solid gray"></iframe>
+              <p>
+                <a href="./examples/words.html">words</a>
+
+              </p>
+            </section>
+            <section>
+              <h1>Data Binding</h1>
+              <p>
+                <ol>
+                  <li>Compilacion del template</li>
+                  <li>Cambio en la vista actualiza el modelo</li>
+                  <li>Cambio en el modelo actualiza la vista ir a 2</li>
+                  <li>Cuando modelo y vista estan estables render del DOM</li>
+                </ol>
+              </p>
+              <img src="img/one-way.png" alt="" />
+              <img src="img/two-way.png" alt="" />
+            </section>
+            <section>
+              <h1>Todo List</h1>
+              <iframe src="./examples/todo-list.html" width="400px" height="300px" style="margin-left: 30px; border: 1px solid gray"></iframe>
+
+            </section>
+            <section>
+              <h1>Filters</h1>
+              <p>
+                Es una funcion sin efectos secundarios que toma un valor del template o de otro filtro y lo reemplaza por otro.
+              </p>
+              <p>Sintaxis:
+              <code>{{expresion | filter1: param1 : param2 | filter2 : param21 | filter3 ...}}</code>
+              </p>
+              <ul>
+                <li>currency</li>
+                <li>number</li>
+                <li>orderBy</li>
+                <li>json</li>
+                <li>limitTo</li>
+                <li>filter</li>
+              </ul>
+            </section>
+            <section>
+              <h1>Controllers</h1>
+              <p>
+                MVC Model View Controller vs MVVM Model View ViewModel
+              </p>
+              <img src="img/mvvm.png" alt="" />
+            </section>
+            <section>
+              <h1>scope</h1>
+              <img src="img/databinding.png" alt="" />
+              <ul>
+                <li>El contexto de ejecucion de una view</li>
+                <li>Puede alojar estado y comportamiento</li>
+                <li>Organizado jerarquicamente</li>
+                <li>Puede disparar eventos</li>
+                <li>Encargado del Two way binding</li>
+              </ul>
+            </section>
+            <section>
+              <h1>Controller</h1>
+              <ul>
+                <li>Aumentan el scope con funciones y estado</li>
+                <li>Setean el estado inicial e una vista</li>
+                <li>ng-controller</li>
+                <li>Controller y Scope</li>
+                <li>Estilo</li>
+                <li>ng-include</li>
+              </ul>
+              <img src="img/databinding-controller.png" alt="" />
+            </section>
+            <section>
+              <h1>Ejemplo</h1>
+              <ul>
+                <li><a href="./examples/todo-list">Todo List controller</a></li>
+                <li> <a href="./examples/user-list">User List</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>Directivas Basicas</h1>
+              <p>
+                Las directivas son marcadores en el DOM (elementos, atributos, classes o comentarios). Para extender el HTML, modificar el comportamiento de los elementos o de sus hijos.
+              </p>
+              <p>
+                Angular compila en tiempo de ejecucion los templates buscando directivas y agregando comportamiento a los elementos del DOM.
+              </p>
+            </section>
+            <section>
+              <h1>Directivas - Componentes</h1>
+              <ul>
+                <li>Tipo de la Directiva EAC</li>
+                <li>Template</li>
+                <li>Scope</li>
+                <li>controllerAs</li>
+                <li>bindToController</li>
+              </ul>
+              <p>
+                Api completa en <a href="https://docs.angularjs.org/api/ng/service/$compile">https://docs.angularjs.org/api/ng/service/$compile</a>
+              </p>
+            </section>
+            <section>
+              <h1>Ejemplo</h1>
+              <pre><code class="js">  angular
+        .module('moviesApp')
+        .directive('searchBox', searchBoxDirective);
+    function searchBoxDirective() {
+        return {
+            restrict: 'E',
+            // template: '<div></div>',
+            templateUrl: 'app/components/search-box/search-box.html',
+            scope: {
+                query: '=?',
+                autocomplete: '=',
+                searchCallback: '='
+            },
+            bindToController: true,
+            controller: 'SearchBoxController',
+            controllerAs: 'searchVm'
+        };
+    }</code></pre>
+            </section>
+            <section>
+              <h1>Ejemplo HTML</h1>
+              <pre><code class="html"><pre><code class="js">&lt;div class=&quot;row&quot;&gt;
+    &lt;h2&gt;Search movies&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+        &lt;search-box autocomplete=&quot;searchVm.topMovieNames&quot; search-callback=&quot;searchVm.updatedSearch&quot;&gt;&lt;/search-box&gt;
+        &lt;movie-listing  movies=&quot;searchVm.movies&quot;&gt;&lt;/movie-listing&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;/div&gt;
+&lt;home-footer&gt;&lt;/home-footer&gt;</code></pre></code></pre>
+            </section>
+            <section>
+              <h1>Otros tipos de directivas</h1>
+              <p>
+                Las veremos mas adelante.
+              </p>
+              <ul>
+                <li>Manipulacion del DOM</li>
+                <li>Compilacion</li>
+                <li>Transclusion</li>
+              </ul>
+            </section>
+            <section>
+              <h1>Servicios Angular</h1>
+              <p>
+                Son objetos singleton no visuales con lazy initialization, que se pueden inyectar a traves del sistema de injeccion de dependencias en otros componentes.
+              </p>
+              <ul>
+                <li>Comunicar Directivas y Controladores</li>
+                <li>Compartir y Reusar codigo</li>
+                <li>Acceder a las API del browser</li>
+                <li>Manejar la comunicacion HTTP</li>
+              </ul>
+            </section>
+            <section>
+              <h1>Servicios Angularjs</h1>
+              <img src="img/angular-services.png" alt="" />
+            </section>
+            <section>
+              <h1>Servicios de Angular</h1>
+              <ul>
+                <li>Browser: $window, $location, $anchorScroll, $timeout</li>
+                <li>Angular: $filter(‘limitTo’), $controller, $log, $rootScope, $scope</li>
+                <li>Templates: $compiler, $parse, $interpolate</li>
+                <li>Promises: $q</li>
+                <li>API Calls: $http, $resource, $xhrFactory</li>
+                <li>Seguridad: $sce, $sceDelegate</li>
+              </ul>
+            </section>
+            <section>
+              <h1>Injeccion de Dependencias</h1>
+              <p class="fragment">
+                Inversion de control, para configurar y testear
+              </p>
+              <ul class="fragment">
+                <li>Dependencia de Creacion: <code> collection = new Array()</code></li>
+                <li>Variable Global: <code>window.location = ‘http://www.google.com’</code></li>
+                <li>PAsar como parametro: <code>function factory(collectionClass){ collection = new collectionClass();}</code></li>
+              </ul>
+            </section>
+            <section>
+              <h1>Sintaxis de DI</h1>
+              <pre><code class="js">    // Reflection notation
+    angular.module('website').
+    controller('PageController', PageController);
+    function PageController($scope, $timeout){};
+
+    // $inject notation
+    angular.module('website').
+    controller('PageController', PageController);
+     PageController.$inject = [‘$scope’, ‘$timeout’];
+     function PageController($scope, $timeout){};
+
+    // Array notation
+    angular.module('website').
+    controller('PageController',
+      [‘$scope’, ‘$timeout’, function($scope, $timeout){}]
+    );
+    </code></pre>
+            </section>
+            <section>
+              <h1>Creacion de un servicio</h1>
+              <pre><code class="js">(function() {
+    angular
+        .module('webapp')
+        .factory('socialSharing', service);
+
+    service.$inject = [
+        '$window'
+    ];
+
+    function service($window) {
+        var service = this;
+        service.shareWithNetwork = shareWithNetwork;
+        return service;
+
+        function shareWithNetwork(name, url, networkFun, label) {
+            if (!$window.plugins || !$window.plugins.socialsharing) {
+              return reportShareError(label);
+            }
+            $window.plugins.socialsharing[networkFun](name, null, url, angular.noop, function () {
+              reportShareError(label);
+            });
+          }
+        }
+}</code></pre>
+            </section>
+            <section>
+              <h1>$http</h1>
+              <p>
+                $http permite realizar llamadas http en sus diferentes metodos. devolviendo una promesa por el resultado de la llamada.
+              </p>
+              <pre><code class="js">
+  // Simple GET request example:
+  $http({
+    method: 'GET',
+    url: '/someUrl'
+  }).then(function successCallback(response) {
+      // this callback will be called asynchronously
+      // when the response is available
+    }, function errorCallback(response) {
+      // called asynchronously if an error occurs
+      // or server returns response with an error status.
+    });</code></pre>
+
+            </section>
+            <section>
+              <h1>$http respuesta</h1>
+              <ul>
+                <li>data – {string|Object} response body</li>
+                <li>status – {number} – HTTP status code of the response.</li>
+                <li>headers – {function([headerName])} – Header getter function.</li>
+                <li>config – {Object} – The configuration object</li>
+                <li>statusText – {string} – HTTP status text of the response.</li>
+              </ul>
+              <h3>Shortcut</h3>
+              <pre><code class="js">$http.get('/someUrl', config).then(successCallback, errorCallback);
+$http.post('/someUrl', data, config).then(successCallback, errorCallback);</code></pre>
+            </section>
+            <section>
+              <h1>$http ejemplos</h1>
+              <ul>
+                <li><a href="https://github.com/aotaduy/angular-example/blob/master/client/app/components/movies-connector/moviesConnector.factory.js"> Movies</a></li>
+                <li><a href="https://github.com/aotaduy/angular-example/tree/master/client/demo/random">Random Demo</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>Promesas - $q</h1>
+              <p>
+                Una promesa es un objeto que representa un valor que puede estar disponible ahora, en el futuro o nunca.
+              </p>
+              <p>
+                Trabajamos con promesas para computar valores de forma asincrona tomando acciones cuando el valor esta disponible o cuando se produce un error.
+              </p>
+            </section>
+            <section>
+              <h1>Promesas - $q</h1>
+              <p>
+                Una promesa puede tener tres estados, <b>pendiente</b> (pending), <b>resuelto</b> (resolved), <b>rechazado</b>(rejected).
+              </p>
+              <p>
+                Usando then(), catch(), finally() podemos tomar acciones ante los diferentes estados de la promesa.
+              </p>
+            </section>
+            <section>
+              <h1>Promesas</h1>
+              <pre><code class="js">
+function(aPromise, $q) {
+  aPromise
+    .then(successCallback, errorCallback)
+    .catch(errorCallback)
+    .finally(finallyCallback);
+  rejected = $q.reject();
+  resolved = $q.when();
+  newPromise = $q.all([rejected, resolved, aPromise]);
+  newPromise = $q.race([rejected, resolved, aPromise]);
+  //Create promises
+  deferred = $q.defer();
+  deferred.resolve(aValue);
+  deferred.reject(aValue);
+  return deferred.promise;
+}</code></pre>
+<p>
+  <a href="http://taoofcode.net/promise-anti-patterns/"> antipatterns</a>
+
+</p>
+            </section>
+          </section>
+          <section>
+          <section>
+                          <h1>Angular 2 Intro</h1>
+                          <ul>
+                            <li>TypeScript -> ES6</li>
+                            <li>Modules Ng and ES6</li>
+                            <li>Componentes</li>
+                            <li>Templates</li>
+                            <li>Bootstraping</li>
+                            <li>Data Binding</li>
+                            <li>Directivas</li>
+                            <li>Servicios</li>
+                            <li>HTTP</li>
+                          </ul>
+                        </section>
+                        <section>
+                          <h1>Angular 2 Pros</h1>
+                          <ul>
+                            <li>TypeScript and ES6</li>
+                            <li>Arquitectura de componentes</li>
+                            <li>Modularidad (ES6)</li>
+                            <li>RxJs REactive programming</li>
+                            <li>Performance</li>
+                            <li>Arquitectura mas simple</li>
+                            <li>CSS Modular</li>
+                            <li>Mejor deteccion de cambios</li>
+                          </ul>
+                        </section>
+                        <section>
+                          <h1>Angular 2 Cons</h1>
+                          <ul>
+                            <li>Recien lanzado</li>
+                            <li>TypeScript</li>
+                            <li>Muchos cambios respecto de Angular.js</li>
+                            <li>Complejidad</li>
+                            <li>Sintaxis de los templates</li>
+                            <li>Eliminacion de scope $scope</li>
+                          </ul>
+                        </section>
+                        <section>
+                          <h1>Arquitectura</h1>
+                          <img src="img/ng2-architecture.png" alt="" />
+                        </section>
+                        <section>
+                          <h1>Componentes</h1>
+                          <ul>
+                            <li>Se definen como una clase anotada</li>
+                            <li>La instancia se vincula al template</li>
+                            <li>Dependencias explicitas y modulares</li>
+                            <li>stylesheets</li>
+                            <li>Usa Shadow Dom</li>
+                            <li>Lifecycle hooks</li>
+                          </ul>
+                        </section>
+                        <section>
+                          <h1>Sintaxis de un componente</h1>
+                          <pre><code class="ts">import { Component } from '@angular/core';
+          import {TodoItem} from './todo-item'
+
+          @Component({
+            selector: 'app-root',
+            templateUrl: 'app.component.html',
+            styleUrls: ['app.component.css']
+          })
+          export class AppComponent {
+            title = 'app works!';
+            list: Array&lt;TodoItem&gt;;
+            item: TodoItem;
+
+            constructor() {
+              this.list = [];
+              this.item = new TodoItem;
+            }
+
+            add( anItem: TodoItem) {
+              this.list.push(anItem);
+              this.item = new TodoItem;
+            }
+
+            remove( index: number) {
+              this.list.splice(index,1);
+            }
+          }</code></pre>
+                        </section>
+                        <section>
+                          <h1>Templates</h1>
+          <pre><code class="html">
+          &lt;h1 [ngClass]=&quot;{&apos;big&apos;: list.length &gt; 5}&quot; &gt;Todo {{list.length}}&lt;/h1&gt;&#10;  &lt;input type=&quot;text&quot; [(ngModel)]=&quot;item.text&quot;&gt;&#10;  &lt;input type=&quot;button&quot;  value=&quot;Add&quot; (click)=&quot;add(item)&quot;&gt;&#10;  &lt;ul&gt;&#10;    &lt;li&#10;    [ngClass]=&quot;{&apos;done&apos;: todoItem.done}&quot; \&#10;    *ngFor=&quot;let todoItem of list; let i = index&quot;&gt;&#10;      &lt;input type=&quot;checkbox&quot; [(ngModel)]=&quot;todoItem.done&quot;&gt;&#10;        {{todoItem.text}}&#10;        &lt;input&#10;          *ngIf=&quot;todoItem.done&quot;&#10;          (click)=&quot;remove(i)&quot;&#10;          type=&quot;button&quot;&#10;          name=&quot;name&quot;&#10;          value=&quot;X&quot;&gt;&#10;      &lt;/li&gt;&#10;  &lt;/ul&gt;
+          </code></pre>
+                        </section>
+                        <section>
+                          <h1>Elementos de un template</h1>
+                          <ul>
+                            <li> Propiedades del DOM y eventos no atributos html</li>
+                            <li>bindings {{}} sin efectos secundarios: Expresiones</li>
+                            <li>atributos []</li>
+                            <li>eventos (): Statements $event displnible</li>
+                            <li>Two Way [()]</li>
+                            <li>Directivas</li>
+                            <li>Componentes</li>
+                            <li>Pipes</li>
+                          </ul>
+                        </section>
+                        <section>
+                          <h1>{{Template Expression}}</h1>
+                          <ul>
+                            <li>sin efectos secundarios =, new, ++ ;</li>
+                            <li>el scope es la instancia del componente</li>
+                            <li>no hay un espacio de nombres global</li>
+                            <li>Quick</li>
+                            <li>Simplicity</li>
+                            <li>Idempotent </li>
+                          </ul>
+                          <h2>Template Statements</h2>
+                        </section>
+
+                        <section>
+                          <h1>Bindings de atributo, clase y  estilo</h1>
+                          <pre><code class="js">&lt;table border=1&gt;&#10;  &lt;!--  expression calculates colspan=2 --&gt;&#10;  &lt;tr&gt;&lt;td [attr.colspan]=&quot;1 + 1&quot;&gt;One-Two&lt;/td&gt;&lt;/tr&gt;&#10;&#10;  &lt;!-- ERROR: There is no `colspan` property to set!&#10;    &lt;tr&gt;&lt;td colspan=&quot;{{1 + 1}}&quot;&gt;Three-Four&lt;/td&gt;&lt;/tr&gt;&#10;  --&gt;&#10;&#10;  &lt;tr&gt;&lt;td&gt;Five&lt;/td&gt;&lt;td&gt;Six&lt;/td&gt;&lt;/tr&gt;&#10;&lt;/table&gt;</code></pre>
+                        </section>
+                      <section>
+                        <h1> Binding de Clase</h1>
+                        <pre><code class="html">&lt;!-- toggle the &quot;special&quot; class on/off with a property --&gt;&#10;&lt;div [class.special]=&quot;isSpecial&quot;&gt;The class binding is special&lt;/div&gt;&#10;&#10;&lt;!-- binding to `class.special` trumps the class attribute --&gt;&#10;&lt;div class=&quot;special&quot;&#10;     [class.special]=&quot;!isSpecial&quot;&gt;This one is not so special&lt;/div&gt;&#10;</code></pre>
+                      </section>
+                      <section>
+                        <h1>Binding de Estilo</h1>
+                        <pre><code class="html">&lt;button [style.color] = &quot;isSpecial ? &apos;red&apos;: &apos;green&apos;&quot;&gt;Red&lt;/button&gt;&#10;&lt;button [style.background-color]=&quot;canSave ? &apos;cyan&apos;: &apos;grey&apos;&quot; &gt;Save&lt;/button&gt;&#10;&lt;button [style.font-size.em]=&quot;isSpecial ? 3 : 1&quot; &gt;Big&lt;/button&gt;&#10;&lt;button [style.font-size.%]=&quot;!isSpecial ? 150 : 50&quot; &gt;Small&lt;/button&gt;
+          </code></pre>
+                      </section>
+                      <section>
+                        <h1>Directivas del framework</h1>
+                        <ul>
+                          <li>Muy pocas</li>
+                          <li>NgClass, NGStyle</li>
+                          <li>*NgId *NgFor *NgSwitch</li>
+                        </ul>
+                      </section>
+                      <section>
+                        <h1>Referencias de template </h1>
+                        <pre><code class="html">
+          &lt;!-- phone refers to the input element; pass its `value` to an event handler --&gt;&#10;  &lt;input #phone placeholder=&quot;phone number&quot;&gt;&#10;  &lt;button (click)=&quot;callPhone(phone.value)&quot;&gt;Call&lt;/button&gt;&#10;&#10;  &lt;!-- fax refers to the input element; pass its `value` to an event handler --&gt;&#10;  &lt;input ref-fax placeholder=&quot;fax number&quot;&gt;&#10;  &lt;button (click)=&quot;callFax(fax.value)&quot;&gt;Fax&lt;/button&gt;&#10;</code></pre>
+                      </section>
+                      <section>
+                        <h1>Modulos y NgModule</h1>
+                        <pre><code class="js">export class ZipCodeValidator implements StringValidator {
+              isAcceptable(s: string) {
+                  return s.length === 5 && numberRegexp.test(s);
+              }
+          }</code></pre>
+          <pre><code class="js">import { ZipCodeValidator } from "./ZipCodeValidator";
+
+          let myValidator = new ZipCodeValidator();</code></pre>
+          <pre><code class="js"> NgModule(options : {&#10;constructor(options?: NgModuleMetadataType)&#10;providers : Provider[]&#10;declarations : Array&lt;Type&lt;any&gt;|any[]&gt;&#10;imports : Array&lt;Type&lt;any&gt;|ModuleWithProviders|any[]&gt;&#10;exports : Array&lt;Type&lt;any&gt;|any[]&gt;&#10;entryComponents : Array&lt;Type&lt;any&gt;|any[]&gt;&#10;bootstrap : Array&lt;Type&lt;any&gt;|any[]&gt;&#10;schemas : Array&lt;SchemaMetadata|any[]&gt;&#10;}) </code></pre>
+                      </section>
+                      <section>
+                        <h1>Subcomponentes Input y Output</h1>
+                        <pre><code class="js">import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+          import {TodoItem} from './todo-item';
+
+          @Component({
+              selector: 'todo-line',
+              template: `
+              &lt;input type=&quot;checkbox&quot; [(ngModel)]=&quot;item.done&quot;&gt;&#10;      {{item.text}}&#10;      &lt;input type=&quot;button&quot; name=&quot;name&quot; value=&quot;X&quot; (click)=&quot;remove(item)&quot;&gt;
+          `
+          })
+          export class TodoLine {
+            @Input() item: TodoItem;
+            @Output() removeRequested: EventEmitter<any> = new EventEmitter();
+
+            remove( index: number) {
+              this.removeRequested.emit(this.item)
+            }
+          }</code></pre>
+                      </section>
+                      </section>
+
+            </div>
+            <div class="footer">
+  <a href="https://github.com/aotaduy"></a>
+  <span>Ing. Andres Otaduy</span>
+ - Angular -CREI
+
+
+</div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                center: false,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>

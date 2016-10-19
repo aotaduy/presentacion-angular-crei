@@ -1,0 +1,72 @@
+<html>
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+      <!-- Latest compiled and minified JavaScript -->
+
+        <!-- Include file with the controller -->
+        <script src="./user-list.controller.js"></script>
+        <style>
+            .selected {
+                background-color: gray;
+            }
+            label {
+              width: 150px;
+              text-align: right
+            }
+        </style>
+    </head>
+    <body ng-app="userListControllerDemo">
+        <div class="container" ng-controller="UserListController as usersVm">
+            <div class="row">
+                <h2>User List #{{usersVm.list.length}}</h2>
+            </div>
+
+            <div class="row">
+              <form >
+                <div class="col-xs-12">
+                  <label for="">
+                  Nombre:
+                  </label>
+                    <input type="text" placeholder="Name" ng-model="usersVm.item.name">
+                </div>
+                <div class="col-xs-12">
+                  <label for="">
+                  Email:
+                  </label>
+                    <input type="email" placeholder="mail" ng-model="usersVm.item.email">
+                </div>
+                <div class="col-xs-12">
+                  <label for="">
+                  Password:
+                  </label>
+                    <input type="password" placeholder="password" ng-model="usersVm.item.password">
+                </div>
+                <div class="col-xs-12">
+                  <label for="">
+                  Fecha de nacimiento:
+                  </label>
+                    <input type="date" placeholder="fecha de nacimiento" ng-model="usersVm.item.dateOfBirth">
+                </div>
+                <div class="col-xs-12">
+                    <input class="btn btn-default" type="submit" value="Add" ng-click="usersVm.add(usersVm.item)">
+                </div>
+              </form>
+                <div ng-repeat="user in usersVm.list track by $index" class="col-xs-12">
+                    <h4 ng-class="{selected: user.selected}">
+                        <input type="checkbox" ng-model="user.selected">
+                        {{user.name}}
+                        -
+                        {{user.email}}
+                        <input class="btn btn-default btn-xs" type="button" value="Edit" ng-click="usersVm.edit(user)">
+                        <input class="btn btn-default btn-xs" type="button" value="X" ng-click="usersVm.remove($index)">
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
